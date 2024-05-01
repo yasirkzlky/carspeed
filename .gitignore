@@ -23,7 +23,7 @@ misc.xml
 deploymentTargetDropDown.xml
 render.experimental.xml
 
-# Keystore files
+# Keystore files,
 *.jks
 *.keystore
 
