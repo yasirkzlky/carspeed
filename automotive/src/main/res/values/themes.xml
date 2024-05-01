@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+  <!-- Base application theme. -->
+  <style name="Base.Theme.App" parent="Theme.AppCompat.Light.DarkActionBar">
+    <item name="android:windowNoTitle">true</item>
+    <item name="android:windowActionBar">false</item>
+    <item name="android:windowFullscreen">true</item>
+  </style>
+
+  <style name="Theme.App.Light" parent="Base.Theme.App">
+    <item name="bgColor">@color/lightBackgroundColor</item>
+    <item name="primaryTextColor">@color/lightPrimaryTextColor</item>
+    <item name="switchActiveCircleColor">@color/lightSwitchActiveCircleColor</item>
+    <item name="switchPassiveCircleColor">@color/lightSwitchPassiveCircleColor</item>
+    <item name="switchActiveBackgroundColor">@color/lightSwitchActiveBackgroundColor</item>
+    <item name="switchPassiveBackgroundColor">@color/lightSwitchPassiveBackgroundColor</item>
+  </style>
+
+  <style name="Theme.App.Dark" parent="Base.Theme.App">
+    <item name="bgColor">@color/darkBackgroundColor</item>
+    <item name="primaryTextColor">@color/darkPrimaryTextColor</item>
+    <item name="switchActiveCircleColor">@color/darkSwitchActiveCircleColor</item>
+    <item name="switchPassiveCircleColor">@color/darkSwitchPassiveCircleColor</item>
+    <item name="switchActiveBackgroundColor">@color/darkSwitchActiveBackgroundColor</item>
+    <item name="switchPassiveBackgroundColor">@color/darkSwitchPassiveBackgroundColor</item>
+  </style>
+
+
+</resources>

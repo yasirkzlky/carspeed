@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tool="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="activity"
+            type="com.yk.automotive.ui.main.MainActivity" />
+
+        <variable
+            name="viewModel"
+            type="com.yk.automotive.ui.main.MainViewModel" />
+    </data>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:cardCornerRadius="5dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="?attr/bgColor"
+                android:orientation="horizontal"
+                android:paddingHorizontal="32dp"
+                android:paddingVertical="24dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginStart="42dp"
+                    android:layout_marginRight="16dp"
+                    android:orientation="vertical">
+
+                    <androidx.appcompat.widget.LinearLayoutCompat
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="20dp"
+                        android:orientation="horizontal">
+
+
+                        <androidx.appcompat.widget.SwitchCompat
+                            android:id="@+id/switchRealData"
+                            android:layout_width="wrap_content"
+                            android:layout_height="80dp"
+                            android:checked="true"
+                            android:gravity="center_vertical"
+                            android:layoutDirection="rtl"
+                            android:thumb="@drawable/thumb"
+                            app:showText="false"
+                            app:track="@drawable/track" />
+
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginStart="12dp"
+                            android:fontFamily="@font/roboto_regular"
+                            android:lineHeight="42dp"
+                            android:text="Real Data"
+                            android:textColor="?attr/primaryTextColor"
+                            android:textFontWeight="400"
+                            android:textSize="32sp">
+
+                        </TextView>
+
+                    </androidx.appcompat.widget.LinearLayoutCompat>
+
+                    <androidx.appcompat.widget.LinearLayoutCompat
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="20dp"
+                        android:orientation="horizontal">
+
+
+                        <androidx.appcompat.widget.SwitchCompat
+                            android:id="@+id/switchCameraOverlay"
+                            android:layout_width="wrap_content"
+                            android:layout_height="80dp"
+                            android:checked="false"
+                            android:gravity="center_vertical"
+                            android:layoutDirection="rtl"
+                            android:thumb="@drawable/thumb"
+                            app:showText="false"
+                            app:track="@drawable/track" />
+
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginStart="12dp"
+                            android:fontFamily="@font/roboto_regular"
+                            android:lineHeight="42dp"
+                            android:text="Toogle Camera Overlay"
+                            android:textColor="?attr/primaryTextColor"
+                            android:textFontWeight="400"
+                            android:textSize="32sp"></TextView>
+
+                    </androidx.appcompat.widget.LinearLayoutCompat>
+
+                    <androidx.appcompat.widget.LinearLayoutCompat
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="20dp"
+                        android:orientation="horizontal">
+
+
+                        <androidx.appcompat.widget.SwitchCompat
+                            android:id="@+id/switchUIMode"
+                            android:layout_width="wrap_content"
+                            android:layout_height="80dp"
+                            android:checked="true"
+                            android:gravity="center_vertical"
+                            android:layoutDirection="rtl"
+                            android:thumb="@drawable/thumb"
+                            app:showText="false"
+                            app:track="@drawable/track" />
+
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginStart="12dp"
+                            android:fontFamily="@font/roboto_regular"
+                            android:lineHeight="42dp"
+                            android:text="Light Mode"
+                            android:textColor="?attr/primaryTextColor"
+                            android:textFontWeight="400"
+                            android:textSize="32sp">
+
+                        </TextView>
+
+
+                    </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/layoutCamera"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:visibility="gone">
+
+                    <androidx.camera.view.PreviewView
+                        android:id="@+id/previewView"
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <it.gilvegliach.android.transparenttexttextview.TransparentTextTextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="?attr/bgColor"
+                        android:fontFamily="@font/asset_regular"
+                        android:gravity="center"
+                        android:text="@{viewModel.speedCar.toString()}"
+                        android:textSize="312sp"
+                        android:visibility="visible"
+                        tool:text="213" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <TextView
+                    android:id="@+id/tvSpeed"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:background="?attr/bgColor"
+                    android:fontFamily="@font/asset_regular"
+                    android:gravity="center"
+                    android:text="@{viewModel.speedCar.toString()}"
+                    android:textColor="?attr/primaryTextColor"
+                    android:textSize="312sp"
+                    android:visibility="visible"
+                    tool:text="13" />
+
+
+            </LinearLayout>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+</layout>

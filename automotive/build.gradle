@@ -1,0 +1,70 @@
+plugins {
+    id 'com.android.application'
+    id 'kotlin-android'
+    id 'kotlin-android-extensions'
+    id 'kotlin-kapt'
+}
+
+android {
+    compileSdkVersion 34
+
+    defaultConfig {
+        applicationId "com.yk.automotive"
+        minSdkVersion 28
+        targetSdkVersion 34
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+
+    dataBinding {
+        enabled = true
+    }
+
+    // This is the gradle equivalent of the libs: ["android.car"] in the Android.bp
+    // Which will be in the SDK 30 R3+
+    useLibrary 'android.car'
+}
+
+dependencies {
+
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+    implementation 'androidx.core:core-ktx:1.5.0'
+    implementation 'com.google.android.material:material:1.3.0'
+
+    implementation "androidx.asynclayoutinflater:asynclayoutinflater:1.0.0"
+
+    //view model
+    implementation 'androidx.lifecycle:lifecycle-extensions:2.2.0'
+    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:2.2.0"
+    implementation "androidx.lifecycle:lifecycle-livedata-ktx:2.2.0"
+    implementation "androidx.lifecycle:lifecycle-runtime-ktx:2.2.0"
+    // rxAndroid
+    implementation 'io.reactivex.rxjava2:rxjava:2.1.9'
+    implementation 'io.reactivex.rxjava2:rxandroid:2.0.2'
+
+    testImplementation 'junit:junit:4.13.2'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.2'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
+
+    implementation 'androidx.camera:camera-camera2:1.1.0-alpha04'
+    implementation 'androidx.camera:camera-lifecycle:1.1.0-alpha04'
+    implementation 'androidx.camera:camera-view:1.0.0-alpha21'
+    implementation 'androidx.lifecycle:lifecycle-runtime-ktx:2.4.0'
+    implementation 'it.gilvegliach.android:transparent-text-textview:1.0.3'
+}

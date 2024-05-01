@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <attr name="bgColor" format="reference"/>
+  <attr name="primaryTextColor" format="reference"/>
+  <attr name="switchActiveCircleColor" format="reference"/>
+  <attr name="switchPassiveCircleColor" format="reference"/>
+  <attr name="switchPassiveBackgroundColor" format="reference"/>
+  <attr name="switchActiveBackgroundColor" format="reference"/>
+
+</resources>
